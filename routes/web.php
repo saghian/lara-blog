@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::prefix('/console')->group(function () {
     Route::get('/', function () {
         return view('dashboard.dashboard');
-    })->name('dashboard');
+    })->name('console.index');
 });
 
 Route::prefix('/console/sample')->group(function () {

@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="{{ route('console.index') }}" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <svg width="26px" height="26px" viewbox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -43,7 +43,7 @@ C8.45300462,16.887125 10.8856023,19.3197227 13.8863636,19.3197227 C16.887125,19.
                     </g>
                 </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bold ms-2">فرست</span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">وبلاگ</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -58,17 +58,92 @@ C8.45300462,16.887125 10.8856023,19.3197227 13.8863636,19.3197227 C16.887125,19.
 
     <ul class="menu-inner py-1">
         <!-- Page -->
-        <li class="menu-item active">
-            <a href="index.html" class="menu-link">
+        <li class="menu-item ">
+            <a href="{{ route('console.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Page 1">صفحه 1</div>
+                <div data-i18n="Page 1">صفحه نخست</div>
             </a>
         </li>
+        <!-- Dashboards -->
+        <li class="menu-item active open">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-category"></i>
+                <div data-i18n="Dashboards">وبلاگ</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item active">
+                    <a href="#" class="menu-link">
+                        <div data-i18n="Analytics"> پست ها</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <div data-i18n="eCommerce">دسته بندی ها</div>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <div data-i18n="eCommerce">تگ ها</div>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <div data-i18n="eCommerce">تجارت الکترونیک</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-item">
+            <a href="page-2.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-images"></i>
+                <div data-i18n="gallery">گالری</div>
+            </a>
+        </li>
+
         <li class="menu-item">
             <a href="page-2.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Page 2">صفحه 2</div>
             </a>
         </li>
+
+        <li class="menu-item">
+            <a href="page-2.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Page 2">کاربران</div>
+            </a>
+        </li>
+
+
+
+        <!-- Dashboards -->
+        <li class="menu-item active open">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Dashboards">تنظیمات</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item active">
+                    <a href="#" class="menu-link">
+                        <div data-i18n="Analytics"> سطح دسترسی</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <div data-i18n="eCommerce">تنظیمات</div>
+                    </a>
+                </li>
+
+
+
+
+            </ul>
+        </li>
+
     </ul>
+
+
 </aside>
