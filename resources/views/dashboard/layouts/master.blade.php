@@ -16,7 +16,6 @@
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="{{ asset('/dashboard/vendor/fonts/boxicons.css') }}">
-
     <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" /> -->
     <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" /> -->
 
@@ -31,6 +30,17 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/typeahead-js/typeahead.css') }}">
+    <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/flatpickr/flatpickr.css') }}">
+    <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/select2/select2.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/jquery-timepicker/jquery-timepicker.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('/dashboard/vendor/libs/pickr/pickr-themes.css') }}"> --}}
+
+    <!-- Page CSS Libs -->
+    @yield('css-libs')
+
 
     @yield('style')
     <!-- Page CSS -->
@@ -97,19 +107,43 @@
 
     <script src="{{ asset('/dashboard/vendor/libs/hammer/hammer.js') }}"></script>
 
+    {{-- <script src="{{ asset('/dashboard/vendor/libs/i18n/i18n.js') }}"></script> --}}
+    <script src="{{ asset('/dashboard/vendor/libs/typeahead-js/typeahead.js') }}"></script>
+
     <script src="{{ asset('/dashboard/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
+    <script src="{{ asset('/dashboard/vendor/libs/cleavejs/cleave.js') }}"></script>
+    <script src="{{ asset('/dashboard/vendor/libs/cleavejs/cleave-phone.js') }}"></script>
+    <script src="{{ asset('/dashboard/vendor/libs/moment/moment.js') }}"></script>
+    <script src="{{ asset('/dashboard/vendor/libs/jdate/jdate.js') }}"></script>
+    <script src="{{ asset('/dashboard/vendor/libs/flatpickr/flatpickr-jdate.js') }}"></script>
+    <script src="{{ asset('/dashboard/vendor/libs/flatpickr/l10n/fa-jdate.js') }}"></script>
+    <script src="{{ asset('/dashboard/vendor/libs/select2/select2.js') }}"></script>
+    <script src="{{ asset('/dashboard/vendor/libs/select2/i18n/fa.js') }}"></script>
+
+    @yield('js-libs')
 
     <!-- Main JS -->
     <script src="{{ asset('/dashboard/js/main.js') }}"></script>
     <script>
+        // Select2 
+        var select2 = $('.select2');
+        if (select2.length) {
+            select2.each(function() {
+                var $this = $(this);
+                $this.wrap('<div class="position-relative"></div>').select2({
+                    placeholder: 'انتخاب',
+                    dropdownParent: $this.parent()
+                });
+            });
+        }
+    </script>
+    <script>
         @yield('script')
     </script>
 
-
-    <!-- Page JS -->
 </body>
 
 </html>
